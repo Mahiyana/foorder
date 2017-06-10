@@ -1,0 +1,9 @@
+<div id="user-widget">
+  <p><% @message %></p>
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", destroy_user_session_path, id: "sign_out", method: "delete" %>
+  <% else %>
+    <%= link_to "Sign in with GitHub", "/users/auth/github", id: "sign_in" %>
+  <% end %>
+</div>
